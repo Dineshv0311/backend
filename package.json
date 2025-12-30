@@ -1,0 +1,24 @@
+{
+  "name": "backend",
+  "version": "1.0.0",
+  "description": "a first backend project",
+  "homepage": "https://github.com/Dineshv0311/backend#readme",
+  "bugs": {
+    "url": "https://github.com/Dineshv0311/backend/issues"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Dineshv0311/backend.git"
+  },
+  "license": "ISC",
+  "author": "Dinesh",
+  "type": "module",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "express": "^5.2.1",
+    "mongoose": "^9.1.0"
+  }
+}
