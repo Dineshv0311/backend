@@ -7,6 +7,7 @@ const connectDB=async()=>{
     } catch (error) {
         console.log("MongoDb connection failed",error);
         process.exit(1);
+        //note: everytime we need to connect the ip address in mongodb atlas network access 
 
     }
 }
