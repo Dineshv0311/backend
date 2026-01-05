@@ -8,4 +8,7 @@ app.get('/', (req, res) => {
     res.send('Server is running successfully');
 });
 
+//routes import
+
+
 export default app;
