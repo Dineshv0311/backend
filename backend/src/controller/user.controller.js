@@ -36,10 +36,18 @@ const loginUser=async(req,res)=>{
         if(!user){
             return res.status(400).json({message:"Invalid email or password"});
         }
+
+        //compare password
+        const isMatch=await user.comparePassword(password);
+        if(!isMatch){
+            return res.status(400).json({message:"Invalid email or password"});
+        }
+        return res.status(200).json({message:"Login successful",userId:{id:user._id,email:user.email,username:user.username}});
     } catch (error) {
-        
+        res.status(500).json({message:"Internal server error"})
     }
 }
 export {
-    registerUser
+    registerUser,
+    loginUser
 };

@@ -30,7 +30,18 @@ const userSchema=new Schema(
         timestamps:true
     }
 )
+//before saving the user hash the password
 
+userSchema.pre("save",async function(next){
+    if(!this.isModified("password"))return next();
+    this.password=await bcrypt.hash(this.password,10);
+    next();
+});
+
+//compare password method
+userSchema.methods.comparePassword=async function (password){
+    return await bcrypt.compare(password,this.password);
+}
 
 export const User=mongoose.model("User",userSchema)
 
