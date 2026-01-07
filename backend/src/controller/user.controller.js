@@ -47,6 +47,13 @@ const loginUser=async(req,res)=>{
         res.status(500).json({message:"Internal server error"})
     }
 }
+const logoutUser=async(req,res)=>{
+    try {
+        
+    } catch (error) {
+        
+    }
+}
 export {
     registerUser,
     loginUser
