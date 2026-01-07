@@ -8,7 +8,7 @@ const registerUser=async(req,res)=>{
         }
 
         //check for existing user
-        const existingUser=await User.finsOne({$or:[{username},{email}]});
+        const existingUser=await User.findOne({$or:[{username},{email}]});
         if (existingUser){
             return res.status(400).json({message:"Username or email already in use"});
         }
@@ -26,7 +26,20 @@ const registerUser=async(req,res)=>{
         res.status(500).json({message:"Server error",error:error.message});
     }
 };
+const loginUser=async(req,res)=>{
+    try {
+        const {
+            username,password
+        }=req.body;
 
+        const user=await User.findOne({email:email.toLowerCase()});
+        if(!user){
+            return res.status(400).json({message:"Invalid email or password"});
+        }
+    } catch (error) {
+        
+    }
+}
 export {
     registerUser
 };

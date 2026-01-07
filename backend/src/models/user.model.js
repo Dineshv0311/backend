@@ -1,5 +1,5 @@
 import mongoose,{Schema} from 'mongoose';
-
+import bcrypt from 'bcrypt';
 const userSchema=new Schema(
     {
         username:{
@@ -30,6 +30,7 @@ const userSchema=new Schema(
         timestamps:true
     }
 )
+
 
 export const User=mongoose.model("User",userSchema)
 
