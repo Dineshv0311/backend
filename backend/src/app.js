@@ -22,3 +22,5 @@ app.use('/api/v1/delete',deleteRouter);
 
 
 export default app;
+
+//learned all the backend api's and compeleted the CRUD operations for posts and user authentication.
